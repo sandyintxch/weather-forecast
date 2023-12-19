@@ -1,4 +1,3 @@
-# Importing necessary modules
 import requests
 import json
 from datetime import datetime
@@ -16,7 +15,7 @@ def get_weather(api_key, city):
         print(f"Failed to fetch weather data. Status Code: {response.status_code}")
         return None
 
-# Function to determine appropriate clothing based on temperature
+# Function to suggest the  appropriate clothing based on temperature
 def suggest_clothing(temperature):
     if temperature < 10:
         return "It's cold! Wear warm layers."
@@ -41,9 +40,7 @@ def main():
     weather_data = get_weather(api_key, city)
 
     if weather_data:
-        # Extracting relevant information
         temperature = weather_data["main"]["temp"]
-        description = weather_data["weather"][0]["description"]
         current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
         # Suggesting clothing based on temperature
@@ -52,16 +49,13 @@ def main():
         result = {
             "City": city,
             "Temperature": temperature,
-            "Description": description,
             "Time": current_time,
-            "Clothing Suggestion": clothing_suggestion,
+            "Cloth Suggestion": clothing_suggestion,
         }
 
         print("\nWeather Information:")
         for key, value in result.items():
             print(f"{key}: {value}")
-
-        # Writing results to a file
         filename = f"weather_results_{city.lower().replace(' ', '_')}.json"
         write_to_file(result, filename)
         print(f"\nResults saved to {filename}")

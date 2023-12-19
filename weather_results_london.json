@@ -1,7 +1,6 @@
 {
-  "City": "London",
-  "Temperature": 12.55,
-  "Description": "overcast clouds",
-  "Time": "2023-12-18 23:46:52",
+  "City": "london",
+  "Temperature": 12.56,
+  "Time": "2023-12-19 00:15:28",
   "Cloth Suggestion": "It's a nice day. A light jacket or sweater should be enough."
 }
